@@ -1,0 +1,27 @@
+<ul>
+	{{#each burger}}
+		<p>{{this.id}}</p>
+		<p>{{this.burger_name}}</p>
+		<p>{{this.devoured}}</p>
+
+		<form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="burgerID" value="{{this.id}}">
+          <button type="submit">eat</button>
+        </form>
+
+
+	{{/each}}
+
+</ul>
+
+
+<h2>Add a burger</h2>
+<form class="create-update-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label>burger name:</label>
+    <input type="text" name="newBurgerName">
+  </div>
+
+  <button type="submit">Add burger</button>
+</form>
